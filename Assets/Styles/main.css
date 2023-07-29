@@ -1,0 +1,338 @@
+/*-----------------------------------------------------------
+# Root
+-----------------------------------------------------------*/
+:root {
+    --bg-color-1: #373a3e;
+    --bg-color-2: #515b63;
+    --response-background-color: #373a3e;
+    --txt-color-2: #c2c2c2;
+    --txt-color-1: #ffffff;
+    --main-color: #00c896;
+    --main-color-hover: #00dda5;
+    --main-color-active: #00af9c;
+    --send-btn-color: linear-gradient(to right top, #00c896, #00cc99, #00d19c, #00d5a0, #00daa3);
+    --shadow-effect: linear-gradient(180deg, #1c1c1c00, #515b63, #515b63);
+    --border-color: #2424249a;
+
+    --base-font: "BPG Ingiri", sans-serif;
+    --title-font: "ALK Sanet", sans-serif;
+
+    --opacity-1: 1;
+    --opacity-05: 0.3;
+
+    --tran-3: 0.15s;
+    --tran-4: 0.16s;
+    --tran-5: 0.17s;
+    --tran-6: 0.19s;
+
+    --font-very-small: 11px;
+    --font-small: 13px;
+    --font-medium: 14px;
+    --font-big: 16px;
+    --font-bigest: 18px;
+
+    --font-title-small: 18px;
+    --font-title-medium: 21px;
+    --font-title-large: 26px;
+}
+
+body {
+    background-color: var(--bg-color-2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: var(--main-color);
+    transition: var(--tran-3);
+}
+
+a:hover {
+    color: var(--main-color-hover);
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*-----------------------------------------------------------
+# Search input
+-----------------------------------------------------------*/
+#shadow-container {
+    background: var(--shadow-effect);
+    height: 12rem;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    flex-wrap: wrap;
+    align-content: end;
+}
+
+#shadow-container p {
+    color: var(--txt-color-2);
+    font-size: var(--font-very-small);
+    font-family: var(--base-font);
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+#shadow-container p span {
+    color: var(--main-color);
+    font-weight: 900;
+}
+
+.search-input {
+    background-color: var(--bg-color-1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow:
+        rgba(0, 0, 0, 0.158) 0px 4px 16px,
+        rgba(0, 0, 0, 0.171) 0px 8px 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--border-color);
+}
+
+.search-input input {
+    background-color: var(--bg-color-1);
+    border: unset;
+}
+
+.search-input input,
+.search-input input::placeholder {
+    color: var(--txt-color-2) !important;
+    font-family: var(--base-font);
+    font-size: var(--font-medium);
+}
+
+.search-input input:focus {
+    box-shadow: unset;
+    outline: none;
+    background-color: var(--bg-color-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sendBtn {
+    border-radius: 8px;
+    font-size: 19px;
+    width: 35px;
+    background: var(--bg-color-2);
+    color: var(--txt-color-2);
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    opacity: 0.65;
+    transition: var(--tran-3) ease;
+}
+
+#sendBtn:disabled {
+    opacity: var(--opacity-05);
+}
+
+#sendBtn.active {
+    color: #fff;
+    background: var(--send-btn-color);
+    opacity: 1;
+    transition: var(--tran-3) ease;
+}
+
+#micBtn {
+    border-radius: 8px;
+    font-size: 19px;
+    width: 35px;
+    background: var(--bg-color-2);
+    color: var(--txt-color-1);
+    font-weight: 700;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    opacity: 0.65;
+    transition: var(--tran-3) ease;
+    margin-left: 5px;
+}
+
+#micBtn:hover {
+    color: #fff;
+    background: var(--send-btn-color);
+    opacity: 1;
+    transition: var(--tran-3) ease;
+}
+
+/*-----------------------------------------------------------
+# Menu
+-----------------------------------------------------------*/
+.menu-btn {
+    background-color: var(--main-color);
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--main-color);
+    position: fixed;
+}
+
+.menu-btn:hover {
+    background-color: var(--main-color-hover) !important;
+    border-color: var(--main-color-hover) !important;
+}
+
+.menu-btn:active {
+    background-color: var(--main-color-active) !important;
+    border-color: var(--main-color-active) !important;
+}
+
+/*-----------------------------------------------------------
+# Tooltip
+-----------------------------------------------------------*/
+.custom-tooltip {
+    padding: 10px;
+}
+
+.custom-tooltip .tooltip-inner {
+    padding: 7px 12px;
+    background-color: var(--bg-color-1);
+    font-family: var(--base-font);
+    font-weight: 900;
+}
+
+.tooltip-arrow {
+    display: none !important;
+}
+
+/*-----------------------------------------------------------
+# Main content
+-----------------------------------------------------------*/
+.search-results {
+    background-color: var(--bg-color-1);
+}
+
+/*-----------------------------------------------------------
+# Button
+-----------------------------------------------------------*/
+.btn:active,
+.btn:focus-visible {
+    outline: none;
+    box-shadow: none !important;
+}
+
+.btn-primary {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+    border-radius: 10px;
+    color: var(--txt-color-1);
+}
+
+.btn-primary:active,
+.btn-primary:hover,
+.btn-primary:focus-visible {
+    background-color: var(--main-color-hover) !important;
+    border-color: var(--main-color-hover) !important;
+}
+
+.btn-secondary {
+    border-radius: 10px;
+    font-family: var(--title-font) !important;
+}
+
+/*-----------------------------------------------------------
+# Modal
+-----------------------------------------------------------*/
+.modal {
+    backdrop-filter: blur(2px);
+}
+
+.modal.fade.show {
+    animation: fade-in var(--tran-6) ease;
+}
+
+.modal.fade {
+    animation: fade-out var(--tran-6) ease;
+}
+
+.modal .modal-dialog,
+.modal .modal-content,
+.modal .modal-header,
+.modal .modal-footer {
+    background-color: var(--bg-color-1);
+    border-radius: 15px;
+    border: none;
+}
+
+.modal .modal-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#results{
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    background-color: var(--bg-color-1);
+    padding: 1rem;
+    border-radius: 20px;
+    overflow: auto;
+    max-height: 200px;
+}
+
+#results div{
+    padding: 0.5rem;
+}
+
+#results div a{
+    color: var(--txt-color-1);
+    text-decoration: none;
+}
+
+#results div a:hover{
+    color: var(--main-color);
+}
+
+@media (max-width: 1024px) {
+    #results{
+        width: 95%;
+        transform: translate(-50%, 1%);
+    }
+}
